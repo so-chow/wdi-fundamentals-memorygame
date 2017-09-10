@@ -1,11 +1,4 @@
-//var cardOne = "queen";
-//var cardTwo = "queen";
-//var cardThree = "king";
-//var cardFour = "king";
-
-//console.log("User flipped " + cardOne);
-//console.log("User flipped " + cardTwo);
-
+//cards array
 var cards = [
 	{
 		rank: 'queen',
@@ -29,35 +22,59 @@ var cards = [
 	}
 ];
 
+//array to store cards in play
 var cardsInPlay = [];
 
+//function to check for match
 var checkForMatch = function(){
-
 	if(cardsInPlay[0] === cardsInPlay[1]){
-	console.log("You found a match!");
+	alert("You found a match!");
 	}
 	else{
-	console.log("Sorry, try again.");
+	alert("Sorry, try again.");
 	}
 };
 
+//function to represent user flipping a card
+var flipCard = function(){
+	cardId = this.getAttribute('data-id');
+	console.log(cardId);
 
+	console.log("User flipped " + cards[cardId].rank);
+	console.log(cards[cardId].cardImage);
+	console.log(cards[cardId].suits);
 
-var flipCard = function(cardId){
+	cardsInPlay.push(cards[cardId].rank);
+
+	this.setAttribute('src', cards[cardId].cardImage);
 
 	if(cardsInPlay.length === 2){
 	checkForMatch();
+	cardsInPlay = [];
 	}
-
-	console.log("User flipped " + cards[cardId].rank);
-	cardsInPlay.push(cards[cardId].rank);
-	console.log(cards[cardId].cardImage);
-	console.log(cards[cardId].suits);
 };
 
+//reset button
+//var resetButton = function(){
+	
+//}
+//var button = documment.querySelector('button');
+//button.addEventListener('click',resetButton);
 
-flipCard(0);
-flipCard(2);
+
+//function to create board
+var createBoard = function(){
+	for(var i=0; i < cards.length; i++){
+		var cardElement = document.createElement('img');
+		cardElement.setAttribute('src', "images/back.png");
+		cardElement.setAttribute('data-id', i);
+		cardElement.addEventListener('click', flipCard);
+		document.getElementById('game-board').appendChild(cardElement);
+	}
+};
+
+createBoard();
+
 
 
 

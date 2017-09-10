@@ -1,11 +1,13 @@
-body{
-	text-align: center;
+html, body {
+  height: 100%;
+  margin: 0;
+  text-align: center;
 }
 
-/*main{
-	width:850px;
-	margin:35px auto;
-}*/
+main{
+	min-height: 100%;
+	margin-bottom: -50px;
+}
 
 header{
 	background-color: #F15B31;
@@ -13,8 +15,8 @@ header{
 }
 
 h1{
-	font-family: "Raleway";
-	color: #0D2C40;
+	font-family: "Raleway", sans-serif;
+	color: white;
 	letter-spacing: 1px;
 	font-weight: 400;
 	font-size: 45px;
@@ -23,23 +25,35 @@ h1{
 
 nav{
 	background-color: #00A6B3;
-	padding: 20px 0;
+	padding: 20px;
+	text-align: center;
 }
 
-a{
+nav a{
 	font-family: "Raleway";
-	color: #F15B31;
+	color: white;
 	letter-spacing: 1px;
 	font-weight: 600;
 	font-size: 18px;
 	margin: 0 20px;
-	border-bottom: 2px solid transparent;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
 }
 
 a:hover{
-	border-color: white;
+	color: #F15B31; 
+	border-bottom: 1px solid #F15B31;
 }
 
+img{
+	margin:40px 8px;
+}
+
+/*main paragraph*/
+.mainstuff{
+	padding: 3em 10em;
+}
 
 h2{
 	font-family: "Raleway";
@@ -47,27 +61,48 @@ h2{
 	letter-spacing: 1px;
 	font-weight: 600;
 	font-size: 20px;
+	text-transform: uppercase;
 }
 
-p{
-	font-family: "Droid Serif";
+p.paragraph{
+	font-family: "Droid Serif", serif;
 	line-height: 26px;
 	font-size: 18px;
+	padding: 2.0em;
 }
 
+#button{
+	background-color: #F15B31; /* Orange */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:3px;
+}
+
+.push{
+	height: 50px;
+}
+
+/*footer */
 footer{
 	text-transform: uppercase;
-	padding:0 20px;
+	padding: 0em 2em;
 	background-color: #0D2C40;
 	color: white;
 	font-size: 14px;
 	letter-spacing: .08em;
 	font-weight: 500;
+	height: 50px;
 }
 
-.copyright{
+p.Copyright{
 	font-family: "Raleway";
 	float:left;
+	text-align: center;
 }
 
 .message{
